@@ -1,0 +1,12 @@
+/* WP7 Layout: 320px.
+ * Gutters: 24px.
+ * Outer margins: 34px.
+ * including from from: Mobile Layout.  */
+ 
+@include mobile();
+
+input[type="text"], input[type="password"], .form-textarea-wrapper textarea{
+  width:200px;
+  padding:6px;
+}
+

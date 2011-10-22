@@ -1,0 +1,157 @@
+/* Tablet Layout: 768px.
+ * Gutters: 24px.
+ * Outer margins: 28px.
+ * Inherits styles from: Default Layout.  */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #{$less-grid-element} {
+    @include grid(8);
+    padding-top:36px;
+    padding-bottom:12px; 
+  }
+  .no-sidebars .content{@include column(8, true);}
+  .content{
+    @include column(4);
+    margin-right:116px;
+    float:left;
+  } 
+  code,pre{
+    @include column(4);
+  }
+  aside{
+    @include column(3); 
+    float:left; 
+    margin-right:-24px;
+  }
+  .noAside .content{
+    @include column(8, true);
+  }
+  #logo img{
+    width:100%;
+  }
+  #logo{
+    width:252px;
+    @include column(3);
+    display:block;
+    &:hover{
+      opacity:.8;
+    }
+  }
+  nav ul{
+    list-style:none;
+    display:block;
+    margin-top:24px;
+  }
+  header nav{
+    clear:left;
+    text-align:right;
+    margin-top:0px;
+    padding-top:0;
+    @include column(8, true);
+    a{
+      padding:6px; 
+      margin-left:24px;
+    }
+  }
+  header .container{padding-bottom:0;}
+ .pitch .menu{
+    list-style:none;
+    text-align:right;
+    li{
+      display:inline;
+      a{
+
+        margin-left:18px;
+        &:hover{
+
+        }
+      }
+    }
+  } 
+  .header-blocks{
+    @include column(5,true);
+    float:left;
+    .menu{
+      list-style:none;
+      text-align:right;
+      li{
+        display:inline;
+        a{
+     
+          margin-left:18px;
+          &:hover{
+
+          }
+        }
+      }
+    }
+  }
+  footer nav {
+    clear:both; 
+    display:block;
+    margin-left:-24px;
+    margin-right:-24px;
+    ul{
+      text-align:center;
+      padding:12px 24px 6px 24px;
+      margin-left:68px;
+      margin-right:68px;
+      li{
+        display:inline;
+        margin-left:12px;
+        margin-right:12px;
+      }
+    }
+  }
+  .pricing{
+    list-style:none;
+    padding-left:2px;
+    @include clearfix();
+    @include column(8, true);
+    ol{
+      list-style:none;
+      margin:0 6px;
+      padding:0;
+    }
+    >li{
+      border-radius:3px;
+      display:inline-block;
+      float:left;
+      margin-right:24px;
+      width:220px;
+      text-align:center;
+      font-size:18px;
+      line-height:36px;
+      padding-top:9px;
+      &:last-child{
+        margin-right:0;
+      }
+      li{
+        font-size:14px;
+      }
+    } 
+  }
+  table{
+    font-size:10px;
+    line-height:14px;
+  }
+  #main .services li{
+    @include column(4);
+  }
+  .pitch{
+    @include clearfix();
+  }
+  .pitch .service-pitch{
+    @include column(4);
+    float:left; 
+    min-height:250px;
+  }
+  .pitch .service-logo{
+    float:left;
+    width:340px;
+  }
+  .pitch .service-account{
+   float:left;
+   width:292px;
+ }
+}

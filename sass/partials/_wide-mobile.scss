@@ -1,0 +1,149 @@
+/* Wide Mobile Layout: 480px.
+ * Gutters: 24px.
+ * Outer margins: 22px.
+ * Inherits styles from: Default Layout, Mobile Layout.  */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #{$less-grid-element} {
+    @include grid(5); 
+    padding-bottom:12px;
+    margin:0 auto;
+  } 
+  #logo{
+    float:none;
+  }
+  header .container{padding-bottom:0px;}
+  header nav li, .pitch .menu li{
+    display:block;
+    a{
+      margin-right:-2px; 
+      margin-left:-2px;
+      display:block;
+      margin-bottom:24px;
+    }
+  }
+  .header-blocks{
+    .menu{
+      margin:0;
+      margin-top:24px;
+    }
+  }
+  ul{
+    margin-left:48px;
+  }
+  .content{
+    @include column(5, true);
+  }
+  .pitch .menu {
+    list-style:none;
+    padding:0;
+    margin:0;
+    a{
+      display: inline-block;
+      line-height: 36px;
+      padding-left: 10px;
+      padding-right: 10px; 
+      border-radius: 3px;
+      &:hover, &.active-trail, &.active{
+
+      }
+    }
+  }
+ code,pre{
+    @include column(5, true);
+  } 
+  aside{
+    @include column(5, true); 
+  }
+  .pitch{
+    .youtube{
+      @include column(5, true); 
+      height:275px;
+      margin-left:-12px;
+      margin-top:24px;
+      margin-bottom:24px;
+      margin-right:-12px;
+    } 
+    h2{
+      font-size:36px; 
+      line-height:48px;
+    }
+    ol{
+      @include column(4, true);
+      padding-left:92px;
+      li{
+        margin-bottom:24px;
+      }
+    }
+    .CTA{
+      display:block;
+      @include column(3,true);
+      text-align:center;
+      span{
+        display:block;
+      }
+      &:hover{
+        box-shadow:none;
+        text-shadow:none;
+      }
+    }
+  }
+  footer .block{
+    @include column(5, true); 
+  }
+  footer nav {
+    background:none; 
+    box-shadow:none;
+  }
+  .header-blocks{
+    .menu{
+      margin:0;
+      margin-top:24px;
+    }
+  }
+  footer nav a, .header-blocks .menu a{
+    display:block; 
+    @include button();
+    line-height:48px;
+    margin-bottom:24px;
+    padding-left:24px;
+    border-radius:6px;
+    font-size:18px;
+  }
+  .pricing{
+    list-style:none;
+    ol{
+      list-style:none;
+      margin:0 18px;
+      padding:0;
+    }
+    >li{
+      border-radius:3px;
+      display:block;
+      text-align:center;
+      font-size:24px;
+      line-height:48px;
+      padding-top:9px;
+      margin-bottom:24px;
+      @include clearfix();
+      &:last-child{
+        margin-right:0;
+      }
+      li{
+        font-size:14px;
+        display:inline;
+        margin:0 24px;
+      }
+    } 
+  }
+ .pricingCTA{
+    @include column(5,true);
+    margin:24px -3px;
+  }
+  #main .services li{
+    @include column(5, true);
+  }
+  .pitch .service-account{
+    width:auto;
+  }
+}

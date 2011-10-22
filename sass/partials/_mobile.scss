@@ -1,0 +1,45 @@
+/* Mobile Layout: 320px.
+ * Gutters: 24px.
+ * Outer margins: 34px.
+ * Inherits styles from: Default Layout.  */
+@mixin mobile(){
+  #{$less-grid-element} {
+    @include grid(3); 
+    padding-bottom:0;
+    margin:0 auto;
+  } 
+  #logo img{width:100%;}
+  header nav li, .pitch .menu li{
+    display:block;
+    a{
+      display:block;
+      margin-bottom:24px;
+    }
+  }
+  .header-blocks{
+    .menu{
+      margin:0;
+      margin-top:24px;
+    }
+  }
+  code,pre{
+    @include column(3, true);
+  }
+  ul{
+    margin-left:36px;
+  }
+  footer .block{
+    @include column(3, true);
+  }
+  footer nav a, .header-blocks .menu a{
+    display:block; 
+    @include button();
+  }
+  footer ul{
+    list-style:none;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  @include mobile();
+}

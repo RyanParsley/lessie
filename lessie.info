@@ -1,1 +1,35 @@
+; BASIC SETTINGS
 name = Lessie
+core = 7.x
+
+; FEATURES 
+
+; REGIONS
+regions[header] = header
+regions[pitch] = pitch
+regions[content] = content
+regions[sidebar_first] = sidebar_first
+regions[sidebar_second] = sidebar_second
+regions[footer] = footer
+regions[fat_footer_primary] = Fat Footer Primary
+regions[fat_footer_secondary] = Fat Footer Secondary
+regions[fat_footer_tertiary] = Fat Footer Tertiary
+
+
+; CSS
+stylesheets[all][] = css/override/kill/ctools.css
+stylesheets[all][] = css/override/kill/field.css
+stylesheets[all][] = css/override/kill/node.css
+stylesheets[all][] = css/override/kill/system.messages.css
+stylesheets[all][] = css/override/kill/system.menus.css
+stylesheets[all][] = css/override/kill/user.css
+stylesheets[all][] = css/override/kill/views.css
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/override/keep/system.base.css
+stylesheets[all][] = css/override/keep/system.theme.css
+stylesheets[all][] = css/override/keep/search.css
+
+stylesheets[all][] = css/less.css
+
+; JAVASCRIPT
+scripts[] = js/scripts.js

@@ -1,0 +1,451 @@
+#{$less-grid-element} {
+  margin:0 auto;
+  padding:0; 
+}
+
+@mixin button(){
+  background:rgba(0,0,0,.3);
+  background:rgba(0,0,0,.3) url(../img/lightNoise.png); 
+           -o-box-shadow:        0 2px 6px rgba(0,0,0,0.2), 
+             inset 0 1px rgba(255,255,255,0.2),  
+             inset 0 10px 20px rgba(255,255,255,0.1), 
+             inset 0 -15px 30px rgba(0,0,0,0.3);
+           -webkit-box-shadow:   0 2px 6px rgba(0,0,0,0.2), 
+             inset 0 1px rgba(255,255,255,0.2),  
+             inset 0 10px 20px rgba(255,255,255,0.1), 
+             inset 0 -15px 30px rgba(0,0,0,0.3);
+           -moz-box-shadow: 	    0 2px 6px rgba(0,0,0,0.2), 
+             inset 0 1px rgba(255,255,255,0.2),  
+             inset 0 10px 20px rgba(255,255,255,0.1), 
+             inset 0 -15px 30px rgba(0,0,0,0.3);
+           box-shadow: 		      0 2px 6px rgba(0,0,0,0.2), 
+             inset 0 1px rgba(255,255,255,0.2),  
+             inset 0 10px 20px rgba(255,255,255,0.1), 
+             inset 0 -15px 30px rgba(0,0,0,0.3); 
+  border:solid 2px #fff;
+  border:solid 2px rgba(0,0,0,.3);
+  text-decoration:none;
+  color:#666;
+  border-radius:3px;
+  text-shadow:1px 1px 1px rgba(255,255,255,.7);
+  &:hover, &.active{
+    color:#444;
+    background:rgba(0,0,0,.3);
+           box-shadow: none;
+           -o-box-shadow: none;
+           -webkit-box-shadow:none;
+           -moz-box-shadow: none;
+           text-shadow:none;
+    border:solid 2px rgba(0,0,0,.3);
+  }
+}
+
+$headerBG:rgba(0,0,0,.5);
+$pitchBG:rgba(0,0,0,.1);
+$mainBG:rgba(0,0,0,.1);
+$footerBG:rgba(0,0,0,.2);
+
+$primaryText:#444;
+$pitchText:rgba(0,0,0,.1);
+$asideText:rgba(0,0,0,.1);
+
+$links:#fff;
+$accent:rgba(0,0,0,.1);
+
+html{background:$footerBG; margin:0; padding:0;}
+
+body {
+  // Stops Mobile Safari from auto-adjusting font-sizes
+  -webkit-text-size-adjust: 100%; 
+  font-family:"trebuchet ms", verdana, sans-serif;
+  color:$primaryText;
+  background:$mainBG;
+  padding-bottom:0;
+  margin-bottom:0;
+}
+
+// Selection colors (easy to forget)
+@include selection-color(unquote("rgb(255,255,158)"));
+.clearme{clear:left;}
+a{
+  text-decoration:none; 
+  color:$footerBG;
+  &:hover{
+    color:$links;
+  }
+}
+footer a{
+  color:$mainBG;
+  &:hover{
+    color:$headerBG;
+  }
+}
+
+p, ul, ol, dl{margin-bottom:24px;}
+
+ul{margin-left:36px;}
+
+aside ul{margin-left:0; list-style:none;}
+
+nav ul{margin-left:0;}
+
+dd{margin-bottom:24px;}
+
+h1,h2,h3,h4{
+  color:#444;
+  font-weight:normal;
+}
+h1 {
+  line-height:48px;
+}
+h2 {
+  line-height:32px;
+  padding-top:10px; 
+  padding-bottom:6px;
+}
+code, pre{
+  background:#E6E6E6;
+  border-color:#CCCCCC;
+  display:block;
+  border: solid 1px;
+  padding:23px;
+  margin-left:-24px;
+}
+footer h2, aside h2{}
+aside h2{
+  text-shadow:1px 1px 1px rgba(0,0,0,.5);
+}
+input, textarea{  
+  font-family:"trebuchet ms", verdana, sans-serif;
+  box-shadow:inset 3px 3px 9px rgba(0,0,0,.1);
+  padding-left:12px;
+  padding-right:12px;
+  padding-top:9px;
+  padding-bottom:6px;
+  border:1px solid #aaa;
+  border-radius:6px;
+  -moz-background-clip: padding;      /* Firefox 1.0-3.6 */
+  -webkit-background-clip: padding-box;  /* Safari, Chrome */
+  background-clip: padding-box;  /* Firefox 4.0+, Opera 10.5, Chrome */
+  &:focus{
+    outline:none;
+    border-color:$footerBG;
+  }
+}
+button::-moz-focus-inner,
+  input[type="reset"]::-moz-focus-inner,
+  input[type="button"]::-moz-focus-inner,
+  input[type="submit"]::-moz-focus-inner,
+  input[type="file"] > input[type="button"]::-moz-focus-inner {
+  border: none;
+}
+
+input[type="text"], input[type="password"]{
+  width:238px;
+}
+textarea{resize: none;}
+input[type="submit"]{
+  @include button();
+}
+.content  img, footer img{
+  max-width:100%;
+  border:6px solid $headerBG;
+  margin-left:-6px;
+  border-radius:3px;
+  margin-bottom:24px;
+  display:block;
+}
+header{
+background: $headerBG;
+  .container{
+    padding-bottom:0;
+  }
+  .menu{
+    list-style:none;
+    a{
+      color:#fff;
+    }
+  }
+  nav{ 
+    padding-top:24px;
+    li{
+      display:inline;
+      a{
+        color:$mainBG;
+        display:inline-block;
+        line-height:36px;
+        padding-left:10px;
+        padding-right:10px;
+        background:rgba(255,255,255,.2);
+        border-radius:3px;
+        &:hover, &.active-trail, &.active{
+          background:rgba(255,255,255,.1);
+        }
+      }
+    }
+  }
+}
+#logo{  
+    @include column(4);
+    &:hover{
+      opacity:.8;
+    }
+  }
+table{
+  width:100%;
+  background:#fff;
+  border:solid 3px $footerBG;
+  margin-top:12px;
+  margin-bottom:24px;
+  th{
+    background:$footerBG;
+    color:#fff;
+  }
+  td,th{
+    padding:12px;
+  }
+  tr:nth-child(even){
+    background:rgba(255,255,255,.5);
+  }
+}
+footer table{
+  background:$mainBG;
+  border:solid 3px $mainBG;
+  th{
+    background:$mainBG;
+    color:$footerBG;
+  }
+}
+.tabs{
+  list-style:none;
+  background:rgba(0,0,0,.2);
+  padding:6px 12px 6px 12px;
+  margin-left:-12px;
+  margin-right:-12px;
+  li{
+    display:inline-block;
+  }
+  a{
+    padding:6px;
+  }
+  li.active a{
+    background:rgba(0,0,0,.2);
+  }
+}
+.pitch{
+  border-top:solid 1px rgba(255,255,255,.3);
+  border-bottom:solid 1px #fff;
+  background:$pitchBG;
+  @include background-image(url(../img/headerTexture.png), radial-gradient(67% -300px, rgba(255,255,255,.5) 100px, rgba(255,255,255,0) 600px));
+  color:$pitchText;
+  text-shadow:1px 1px 1px rgba(0,0,0,.3);
+  .menu a.active-trail{color:#777;}
+  .CTA{
+    margin-bottom:24px;
+  }
+  h2{
+    font-size:24px;
+    line-height:36px;
+    color:#fff;
+    text-shadow:none;
+    padding-bottom:24px;
+  } 
+  p{
+   font-size:18px;
+  }
+  .block .menu li a{
+    color:#333;
+    text-shadow: 1px 1px 1px #fff;
+  }
+}
+aside{
+  .callout .block{
+    padding:12px 24px 1px 24px;
+    margin-left:-24px;
+    margin-right:-24px;
+    margin-bottom:24px;
+    background:$primaryText;
+    color:$asideText;
+    border-radius:3px;
+    h2{
+      color:$mainBG;
+    }
+  }
+  h2{
+    color:#333;
+    text-shadow:none;
+  }
+  .cta{
+    display:block;
+    background:#eee;
+    text-align:center;
+    font-size:1.5em;
+    line-height:2;
+    margin-top:12px;
+    @include button();
+    @include border-radius(6px); 
+    &:hover{
+      background:#fff;
+    }
+  }
+}
+footer{
+  background-color:$footerBG;
+  position:relative;
+  overflow:none;
+  clear:left;
+  margin-bottom:0;
+  .block, nav{
+    color:$pitchText;
+    border-radius:3px;
+  }
+  .block{
+    padding:24px; 
+    margin-left:-24px; 
+    margin-right:-24px; 
+    margin-bottom:24px;
+  }
+  .cta{
+    background:$pitchText;
+    color:#333;
+    display:block;
+    padding:3px;
+    margin-top:6px;
+    font-size:2em;
+    line-height:1.5;
+    text-align:center;
+    @include border-radius(6px);
+    &:hover{
+      background:#fff;
+    }
+  }
+  h2{
+    color:#B0D9A8;
+  }
+}
+footer a{
+  &:hover{
+  }
+}
+nav ul{
+  list-style:none;
+}
+footer .block li{margin-bottom:24px;}
+.pricingCTA{
+  @include column(4,true);
+  display:block;
+  background:$accent;
+  border:3px solid $mainBG;
+  text-align:center;
+  line-height:1.5;
+  font-size:21px;
+  padding-top:12px;
+  padding-bottom:9px;
+  border-radius:12px;
+  margin-left:-3px;
+  margin-bottom:24px;
+  color:$footerBG;
+  text-shadow:1px 1px 0px rgba(255,255,255,.3);
+  box-shadow:1px 1px 3px rgba(0,0,0,.5);
+  span{
+    display:block;
+    font-size:18px;
+  }
+  &:hover{
+    box-shadow:none;
+    background:$footerBG;
+    color:$mainBG;
+    border-color:$footerBG;
+    text-shadow:none;
+  }
+}
+
+#main .services{
+    list-style:none;
+    padding:0;
+    margin:0;
+    li{
+      background:#fff;
+      padding-bottom:12px;
+      margin-bottom:24px;
+      padding-left:10px;
+      margin-left:-10px;
+      padding-right:10px;
+      margin-right:13px; 
+      border-bottom:solid 1px #ddd;
+      border-right:solid 1px #ddd;
+      @include clearfix(); 
+    }
+    .integrate{
+      float:right;
+      display:block;
+      background:$pitchBG;
+      color:#fff;
+      padding-left:12px;
+      padding-right:6px;
+      height:24px;
+      position: relative;
+      margin-right:12px;
+      &:after{
+        content: ' ';
+	      height: 0;
+	      position: absolute;
+	      width: 0;
+	      border: 12px solid transparent;
+	      border-left-color: $pitchBG;
+        left:100%;
+      } 
+      &:hover{
+        background:#999;
+        &:after{
+	        border-left-color: #999;
+        } 
+      }
+    }
+  }
+  footer .services{
+    list-style:none;
+    padding:0;
+    margin:0;
+    @include clearfix();
+    li{
+      @include column(3);
+      float:left;
+      &:nth-child(2n){
+        margin-right:0;
+      }
+    }
+  }
+.pitch .container{padding:0;}
+.pitch .service-account{
+}
+.pitch .service-pitch{
+   margin-top:24px;
+   margin-right:116px;
+ }
+ .pitch .service-logo{
+    margin-top:24px;
+     margin-bottom:24px;
+     border:2px solid #666;
+     img{
+       width:100%;
+       display:block;
+     }
+ }
+.pitch .service-account{
+  text-align:center;
+   margin-bottom:24px;
+   font-size:1.5em;
+   line-height:1;
+   padding-top:24px;
+   padding-bottom:18px;
+   width:292px;
+   padding:24px;
+   @include border-radius(12px);
+   border:2px solid #333;
+  background:$headerBG;
+  a{
+    color:#333;
+    text-decoration:none;
+  }
+}
