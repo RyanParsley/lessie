@@ -1,8 +1,19 @@
 <header>
   <div class="container">
     <a href="<?php print $front_page; ?>" id="logo">
-      <img src="<?php print base_path() . path_to_theme(); ?>/img/logo.png" alt="Change me in header include" />
+      <?php if ($site_name): ?>
+          <?php print $site_name; ?>
+      <?php endif;?>
+      <?php if ($logo): ?>
+        <img src="<?php print base_path() . path_to_theme(); ?>/img/logo.png" alt="Change me in header include" />
+      <?php endif;?>
     </a>
+
+    <?php if ($site_slogan): ?>
+      <p class="slogan">
+        <?php print $site_slogan; ?>
+      </p>
+    <?php endif;?>
     <?php if ($page['header']): ?>
       <div class="header-blocks">
         <?php print render($page['header']); ?>
