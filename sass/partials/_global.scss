@@ -3,40 +3,22 @@
   padding:0; 
 }
 
-@mixin button(){
-  background:rgba(0,0,0,.3);
-  background:rgba(0,0,0,.3) url(../img/lightNoise.png); 
-           -o-box-shadow:        0 2px 6px rgba(0,0,0,0.2), 
-             inset 0 1px rgba(255,255,255,0.2),  
-             inset 0 10px 20px rgba(255,255,255,0.1), 
-             inset 0 -15px 30px rgba(0,0,0,0.3);
-           -webkit-box-shadow:   0 2px 6px rgba(0,0,0,0.2), 
-             inset 0 1px rgba(255,255,255,0.2),  
-             inset 0 10px 20px rgba(255,255,255,0.1), 
-             inset 0 -15px 30px rgba(0,0,0,0.3);
-           -moz-box-shadow: 	    0 2px 6px rgba(0,0,0,0.2), 
-             inset 0 1px rgba(255,255,255,0.2),  
-             inset 0 10px 20px rgba(255,255,255,0.1), 
-             inset 0 -15px 30px rgba(0,0,0,0.3);
-           box-shadow: 		      0 2px 6px rgba(0,0,0,0.2), 
-             inset 0 1px rgba(255,255,255,0.2),  
-             inset 0 10px 20px rgba(255,255,255,0.1), 
-             inset 0 -15px 30px rgba(0,0,0,0.3); 
-  border:solid 2px #fff;
-  border:solid 2px rgba(0,0,0,.3);
+@mixin button($background: #333){
+  background:$background;
+  background:$background url(../img/lightNoise.png); 
+  @include box-shadow( 0 2px 6px rgba(0,0,0,0.2), 
+                       inset 0 1px rgba(255,255,255,0.2),  
+                       inset 0 10px 20px rgba(255,255,255,0.1), 
+                       inset 0 -15px 30px rgba(0,0,0,0.3));
+  border:solid 2px $background;
   text-decoration:none;
-  color:#666;
+  color:darken($background, 30%);
   border-radius:3px;
   text-shadow:1px 1px 1px rgba(255,255,255,.7);
   &:hover, &.active{
-    color:#444;
-    background:rgba(0,0,0,.3);
-           box-shadow: none;
-           -o-box-shadow: none;
-           -webkit-box-shadow:none;
-           -moz-box-shadow: none;
-           text-shadow:none;
-    border:solid 2px rgba(0,0,0,.3);
+    background: $background;
+    @include box-shadow(none);
+    text-shadow:none;
   }
 }
 
@@ -186,11 +168,11 @@ background: $headerBG;
   }
 }
 #logo{  
-    @include column(4);
-    &:hover{
-      opacity:.8;
-    }
+  display:block;
+  &:hover{
+    opacity:.8;
   }
+}
 table{
   width:100%;
   background:#fff;
@@ -277,16 +259,12 @@ aside{
   }
   .cta{
     display:block;
-    background:#eee;
     text-align:center;
     font-size:1.5em;
     line-height:2;
     margin-top:12px;
     @include button();
     @include border-radius(6px); 
-    &:hover{
-      background:#fff;
-    }
   }
 }
 footer{
